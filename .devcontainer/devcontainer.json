@@ -1,0 +1,33 @@
+{
+	"name": "Java",
+	"image": "mcr.microsoft.com/devcontainers/java:1-17-bullseye",
+
+	"features": {
+		"ghcr.io/devcontainers/features/java:1": {
+			"version": "none",
+			"installMaven": "false",
+			"installGradle": "false"
+		}
+	},
+
+	"customizations": {
+    "vscode": {
+		"extensions": [
+			"vscjava.vscode-java-pack",
+			"vscjava.vscode-gradle",
+			"vmware.vscode-boot-dev-pack"
+		],
+        "settings": {
+            "java.import.gradle.java.home": "/usr/local/openjdk-17",
+            "java.jdt.ls.java.home": "/usr/local/openjdk-17",
+            "java.configuration.runtimes": [
+                {
+                    "name": "JavaSE-17",
+                    "path": "/usr/local/openjdk-17",
+                    "default": true
+                }
+            ]
+        }
+    }
+}
+}
