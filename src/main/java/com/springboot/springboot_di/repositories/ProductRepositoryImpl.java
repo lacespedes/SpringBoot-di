@@ -2,12 +2,12 @@ package com.springboot.springboot_di.repositories;
 
 import java.util.List;
 
-import org.springframework.context.annotation.Primary;
+//import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 import com.springboot.springboot_di.models.Product;
 
-@Primary
-@Repository
+//@Primary
+@Repository("productList") // Especificamos un nombre para el bean, esto es útil para la inyección de dependencias cuando hay múltiples implementaciones de la misma interfaz
 public class ProductRepositoryImpl implements ProductRepository {
     List<Product> data;
 
