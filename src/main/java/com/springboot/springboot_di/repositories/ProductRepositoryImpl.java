@@ -2,11 +2,10 @@ package com.springboot.springboot_di.repositories;
 
 import java.util.List;
 
-import org.springframework.stereotype.Component;
-
+import org.springframework.stereotype.Repository;
 import com.springboot.springboot_di.models.Product;
 
-@Component
+@Repository
 public class ProductRepositoryImpl implements ProductRepository {
     List<Product> data;
 

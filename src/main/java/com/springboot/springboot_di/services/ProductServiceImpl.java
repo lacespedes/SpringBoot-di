@@ -3,12 +3,12 @@ package com.springboot.springboot_di.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.springboot.springboot_di.models.Product;
 import com.springboot.springboot_di.repositories.ProductRepository;
 
-@Component
+@Service
 public class ProductServiceImpl implements ProductService {
 
     @Autowired
