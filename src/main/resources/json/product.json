@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "name": "Horno microondas Samsung 20L",
+        "price": 19.99
+    },
+    {
+        "id": 2,
+        "name": "Horno Haceb",
+        "price": 29.99
+    },
+    {
+        "id": 3,
+        "name": "Lavadora LG 30L",
+        "price": 39.99
+    },
+    {
+        "id": 4,
+        "name": "Lavadora Whirlpool 35L",
+        "price": 49.99
+    },
+    {
+        "id": 5,
+        "name": "Calentador agua Bosch 40L",
+        "price": 59.99
+    },
+    {
+        "id": 6,
+        "name": "Nevera Samsung 45L",
+        "price": 69.99
+    },
+    {
+        "id": 7,
+        "name": "Nevera LG 50L",
+        "price": 79.99
+    },
+    {
+        "id": 8,
+        "name": "Televisor Sony 55P",
+        "price": 89.99
+    },
+    {
+        "id": 9,
+        "name": "Televisor Samsung 60P",
+        "price": 99.99
+    },
+    {
+        "id": 10,
+        "name": "Estufa de leña Jotul",
+        "price": 109.99
+    }
+]
