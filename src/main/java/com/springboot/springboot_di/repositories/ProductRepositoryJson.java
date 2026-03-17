@@ -7,8 +7,6 @@ import java.util.List;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
-import com.fasterxml.jackson.core.exc.StreamReadException;
-import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.springboot.springboot_di.models.Product;
 
@@ -19,19 +17,26 @@ public class ProductRepositoryJson implements ProductRepository {
     public ProductRepositoryJson() {
         Resource resource = new ClassPathResource("json/product.json");
         // Codigo para cargar el archivo JSON y convertirlo a una lista de productos
+        loadProductsFromJson(resource);
+    }
+
+    public ProductRepositoryJson(Resource resource) {
+        loadProductsFromJson(resource);
+    }
+
+    private void loadProductsFromJson(Resource resource) {
         ObjectMapper objectMapper = new ObjectMapper();
-        
         try {
-            products = Arrays.asList(objectMapper.readValue(resource.getFile(), Product[].class));
-        } catch (StreamReadException e) {
-            e.printStackTrace();
-        } catch (DatabindException e) {
-            e.printStackTrace();
+            //Otra alternativa para cargar el archivo JSON, usando getInputStream() en lugar de getFile(), esto es útil cuando el archivo JSON 
+            // está empaquetado dentro de un JAR, ya que getFile() no funcionará en ese caso. Con getInputStream(), se puede leer el contenido 
+            // del archivo JSON sin importar dónde esté ubicado, ya sea en el sistema de archivos o dentro de un JAR.
+            //products = Arrays.asList(objectMapper.readValue(resource.getFile(), Product[].class));
+            products = Arrays.asList(objectMapper.readValue(resource.getInputStream(), Product[].class));
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
+    
     @Override
     public List<Product> findAll() {
         return products;
